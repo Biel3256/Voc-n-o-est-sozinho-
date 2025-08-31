@@ -16,10 +16,13 @@
             --text-color: #333333;
             --primary-color: #007bff;
             --secondary-color: #6c757d;
+            
+            --theme-green: #28a745;
+            --theme-yellow: #ffc107;
+            --theme-blue: #17a2b8;
+            --theme-purple: #6f42c1;
+
             --font-main: 'Montserrat', sans-serif;
-            --mood-color-happy: #28a745;
-            --mood-color-calm: #17a2b8;
-            --mood-color-sad: #ffc107;
         }
 
         body {
@@ -124,9 +127,9 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
-        .mood-tracker button[data-mood="happy"] { color: #fff; background: var(--mood-color-happy); }
-        .mood-tracker button[data-mood="calm"] { color: #fff; background: var(--mood-color-calm); }
-        .mood-tracker button[data-mood="sad"] { color: #fff; background: var(--mood-color-sad); }
+        .mood-tracker button[data-mood="happy"] { color: #fff; background: var(--theme-green); }
+        .mood-tracker button[data-mood="calm"] { color: #fff; background: var(--theme-blue); }
+        .mood-tracker button[data-mood="sad"] { color: #fff; background: var(--theme-yellow); }
         
         #mood-message {
             margin-top: 20px;
@@ -189,11 +192,12 @@
             border-left: 4px solid #ff9800;
             padding: 15px;
             margin-bottom: 15px;
+            font-size: 14px;
         }
 
         .breathing-exercise {
             background-color: #e6f7ff;
-            border-left: 4px solid var(--mood-color-calm);
+            border-left: 4px solid var(--theme-blue);
             padding: 15px;
             margin-top: 10px;
         }
@@ -201,7 +205,7 @@
         #breathing-text {
             font-weight: 600;
             font-size: 18px;
-            color: var(--mood-color-calm);
+            color: var(--theme-blue);
             margin-bottom: 10px;
         }
 
@@ -211,7 +215,7 @@
         }
 
         #breathing-button {
-            background-color: var(--mood-color-calm);
+            background-color: var(--theme-blue);
             color: #fff;
             border: none;
             padding: 10px 20px;
@@ -226,7 +230,7 @@
         }
         
         #music-button {
-            background-color: var(--mood-color-calm);
+            background-color: var(--theme-blue);
             color: #fff;
             border: none;
             padding: 10px 20px;
@@ -314,7 +318,7 @@
 
         .yellow-september-highlight {
             background-color: #fffde7;
-            border-left: 4px solid #ffc107;
+            border-left: 4px solid var(--theme-yellow);
             padding: 20px;
             margin-bottom: 30px;
             border-radius: 8px;
@@ -323,7 +327,7 @@
 
         .yellow-september-highlight h2 {
             font-size: 24px;
-            color: #ffc107;
+            color: var(--theme-yellow);
             border-bottom: none;
             margin-bottom: 10px;
         }
@@ -332,6 +336,11 @@
             color: #555;
             font-style: italic;
             margin: 0;
+        }
+        
+        header h1 i {
+            margin-right: 10px;
+            color: var(--primary-color);
         }
     </style>
 </head>
@@ -360,22 +369,22 @@
             </ul>
         </nav>
         
-        <div class="section" id="intencao">
-            <h2>A Intenção por Trás deste Site</h2>
-            <p>Este site foi criado com um propósito muito simples e sincero: ajudar. A ideia é ser um espaço de apoio para quem está passando por momentos difíceis, oferecendo ferramentas e palavras de carinho. Sinta-se à vontade para explorar e usar o que for útil para você.</p>
-        </div>
-        
-        <div class="section" id="setembro-amarelo">
-            <h2>Setembro Amarelo <i class="fas fa-ribbon" style="color: #ffc107;"></i></h2>
+        <div class="yellow-september-highlight" id="setembro-amarelo">
+            <h2>Setembro Amarelo <i class="fas fa-ribbon" style="color: var(--theme-yellow);"></i></h2>
             <p>O Setembro Amarelo é uma campanha global de prevenção ao suicídio. O nosso maior objetivo é conscientizar a população sobre a importância de conversar sobre a saúde mental. Lembre-se: pedir ajuda é um sinal de força. Você não está sozinho.</p>
-            <div class="info-box" style="background-color: #fffae6; border-left-color: #ffc107;">
+            <div class="info-box" style="background-color: #fffae6; border-left-color: var(--theme-yellow);">
                 <h3>O que é o Setembro Amarelo?</h3>
                 <p>É uma campanha de conscientização sobre a prevenção ao suicídio. O mês foi escolhido porque, desde 2003, o dia 10 de setembro é o Dia Mundial de Prevenção ao Suicídio. O objetivo é evitar o estigma, promover a conversa e mostrar que a ajuda está disponível.</p>
             </div>
         </div>
 
-        <div class="section" id="humor-tracker">
-            <h2 id="diario-humor">Como você está se sentindo hoje?</h2>
+        <div class="section" id="intencao">
+            <h2>A Intenção por Trás deste Site</h2>
+            <p>Este site foi criado com um propósito muito simples e sincero: ajudar. A ideia é ser um espaço de apoio para quem está passando por momentos difíceis, oferecendo ferramentas e palavras de carinho. Sinta-se à vontade para explorar e usar o que for útil para você.</p>
+        </div>
+
+        <div class="section">
+            <h2 id="humor-tracker">Como você está se sentindo hoje?</h2>
             <p>Selecione uma opção para refletir sobre seu humor.</p>
             <div class="mood-tracker">
                 <button data-mood="happy">Motivado</button>
@@ -423,7 +432,7 @@
         </div>
         
         <div class="section" id="sentimentos">
-            <h2><i class="fas fa-ribbon" style="color: #28a745; margin-right: 8px;"></i> Entendendo os Sentimentos</h2>
+            <h2><i class="fas fa-ribbon" style="color: var(--theme-green); margin-right: 8px;"></i> Entendendo os Sentimentos</h2>
             <p>A fita verde é o símbolo global para a conscientização da saúde mental.</p>
             <div class="info-box">
                 <h3>Depressão</h3>
@@ -456,7 +465,7 @@
         </div>
         
         <div class="section" id="autismo">
-            <h2><i class="fas fa-infinity" style="color: #007bff; margin-right: 8px;"></i> Apoiando Pessoas com Autismo</h2>
+            <h2><i class="fas fa-infinity" style="color: var(--primary-color); margin-right: 8px;"></i> Apoiando Pessoas com Autismo</h2>
             <p>O Transtorno do Espectro Autista (TEA) é uma condição de desenvolvimento que afeta a forma como a pessoa se comunica, interage e processa informações. Com paciência e amor, é possível criar um ambiente acolhedor para a pessoa autista.</p>
             <div class="info-box">
                 <h3>Entenda as Sensibilidades</h3>
@@ -481,7 +490,7 @@
         </div>
 
         <div class="section" id="estrategias">
-            <h2><i class="fas fa-ribbon" style="color: #28a745; margin-right: 8px;"></i> Estratégias de Apoio</h2>
+            <h2><i class="fas fa-ribbon" style="color: var(--theme-green); margin-right: 8px;"></i> Estratégias de Apoio</h2>
             <p>Estas são algumas dicas para ajudar a gerenciar seus sentimentos no dia a dia.</p>
             <div class="daily-tip">
                 <h3>Se Sentindo Triste?</h3>
@@ -546,10 +555,10 @@
         </div>
         
         <footer>
-            <p><strong>Aviso Importante:</strong> Este site oferece informações de apoio, mas não substitui o diagnóstico ou tratamento de um profissional de saúde. Se você está em crise, procure ajuda imediata. <i class="fas fa-hand-holding-heart" style="color: #6c757d;"></i></p>
+            <p><strong>Aviso Importante:</strong> Este site oferece informações de apoio, mas não substitui o diagnóstico ou tratamento de um profissional de saúde. Se você está em crise, procure ajuda imediata. <i class="fas fa-hand-holding-heart" style="color: var(--secondary-color);"></i></p>
             <p>Criado com Carinho por GABRIEL LIMA DOS SANTOS</p>
             <p>Siga no Instagram: <a href="https://www.instagram.com/bielzera.444?igsh=MWtuOG04ZThyMnNwcA==" target="_blank">@bielzera.444</a></p>
-            <p><i class="fas fa-hand-holding-heart" style="color: #6c757d;"></i> Você não está sozinho. <span style="font-weight: bold; color: #28a745;">;</span></p>
+            <p><i class="fas fa-hand-holding-heart" style="color: var(--secondary-color);"></i> Você não está sozinho. <span style="font-weight: bold; color: var(--theme-green);">;</span></p>
         </footer>
     </div>
 
@@ -584,24 +593,24 @@
         });
 
         // Diário da Gratidão (usando localStorage)
-        const savedGratitude = localStorage.getItem('gratitude');
+        const savedGratitude = localStorage.getItem('gratidão');
         if (savedGratitude) {
             gratitudeTextarea.value = savedGratitude;
         }
 
         saveGratitudeButton.addEventListener('click', () => {
-            localStorage.setItem('gratitude', gratitudeTextarea.value);
+            localStorage.setItem('gratidão', gratitudeTextarea.value);
             alert('Seu diário foi salvo!');
         });
         
         // Diário de Pequenas Vitórias (usando localStorage)
-        const savedWins = localStorage.getItem('wins');
+        const savedWins = localStorage.getItem('vitórias');
         if (savedWins) {
             winsTextarea.value = savedWins;
         }
 
         saveWinsButton.addEventListener('click', () => {
-            localStorage.setItem('wins', winsTextarea.value);
+            localStorage.setItem('vitórias', winsTextarea.value);
             alert('Suas vitórias foram salvas!');
         });
 
@@ -685,6 +694,18 @@
                 alert('Por favor, escreva sua sugestão antes de enviar.');
             }
         });
+    </script>
+
+    <!-- VLibras Plugin (única adição) -->
+    <div vw class="enabled">
+      <div vw-access-button class="active"></div>
+      <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+      </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+      new window.VLibras.Widget('https://vlibras.gov.br/app');
     </script>
 </body>
 </html>
